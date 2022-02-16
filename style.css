@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #F1F2F6;
+    background-image: url(./martin-oslic-Liw4OwmWN5o-unsplash.jpg) ;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -21,39 +21,41 @@ p {
 
 /* Credit to Shireen Taj https://freefrontend.com/css-text-effects/ */
 h1 {
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
-    color: #27187E;
+    color: #090811;
     font-weight: 1000;
-    text-shadow: 3px 3px 0px #758BFD, 
-            5px 5px 0px #AEB8FE, 
-            8px 8px 0px #F1F2F6;
+    text-shadow: 3px 3px 0px #9cd6bb, 
+            5px 5px 0px #9baca1, 
+            8px 8px 0px #d3dada;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
 h4 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 20%;
+    font-size: 15px;
 }
 
 #calc-container {
-    height: 385px;
+    height: 470px;
     width: 350px;
     border-style: solid;
-    border-width: 10px;
-    border-color: #27187E;
+    border-width: 7px;
+    border-color: #64626e;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 10px;
-
+    margin-top: 5%;
+    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.5)), url(./seamless-pattern-cow-vector-1970367.jpg); 
 }
 
 #display {
     height: 60px;
     border-style: solid;
     border-width: 4px;
-    border-color: #27187E;
+    border-color: #4b4a53;
     margin-top: 15px;
     margin-bottom: 10px;
     border-radius: 4px;
@@ -76,7 +78,7 @@ h4 {
 }
 
 #buttons div {
-    background-color: #AEB8FE;
+    background-color: #9cd6bb;
     aspect-ratio: 1;
 }
 
@@ -88,10 +90,6 @@ h4 {
     margin-top: 5px;
 }
 
-/*#big-buttons div {
-    background-color: #AEB8FE;
-} */
-
 .button {
     border-radius: 4px;
     display: flex;
@@ -101,28 +99,31 @@ h4 {
     font-size: 25px;
 }
 
-#footer {
-    margin-top: auto;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-}
-
 #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine,
 #plus, #minus, #multiply, #divide, #equals, #point, #del, #clr {
-    background-color: #AEB8FE;
+    background-color: #9cd6bb;
 }
 
 #zero:hover, #one:hover, #two:hover, #three:hover, #four:hover, #five:hover, 
 #six:hover, #seven:hover, #eight:hover, #nine:hover, #plus:hover, #minus:hover, 
 #multiply:hover, #divide:hover, #equals:hover, #point:hover, #del:hover, #clr:hover {
-    background-color: #9da7f7;
+    background-color: #83b39d;
     cursor: pointer;
 }
 
 #zero:active, #one:active, #two:active, #three:active, #four:active, #five:active, 
 #six:active, #seven:active, #eight:active, #nine:active, #plus:active, #minus:active, 
 #multiply:active, #divide:active, #equals:active, #point:active, #del:active, #clr:active {
-    background-color: #7b84cf;
+    background-color: #739183;
     cursor: pointer;
+}
+
+#footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 100%;
+    background-color: #77c27d;
 }
