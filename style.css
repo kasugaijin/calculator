@@ -25,7 +25,7 @@ h1 {
     text-align: center;
     color: #090811;
     font-weight: 1000;
-    text-shadow: 3px 3px 0px #9cd6bb, 
+    text-shadow: 3px 3px 0px #9ae46a, 
             5px 5px 0px #9baca1, 
             8px 8px 0px #d3dada;
     margin-top: 10px;
@@ -38,16 +38,26 @@ h4 {
     font-size: 15px;
 }
 
+#horns {
+    background-image: url(./cowhorn.png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    height: 85px;
+    width: 100px;
+    margin-bottom: 0;
+    margin-top: 2%;
+}
+
 #calc-container {
     height: 470px;
     width: 350px;
     border-style: solid;
     border-width: 7px;
-    border-color: #64626e;
+    border-color: #171718;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 10px;
-    margin-top: 5%;
+    margin-top: 0;
     background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.5)), url(./seamless-pattern-cow-vector-1970367.jpg); 
 }
 
@@ -55,7 +65,7 @@ h4 {
     height: 60px;
     border-style: solid;
     border-width: 4px;
-    border-color: #4b4a53;
+    border-color: #171718;
     margin-top: 15px;
     margin-bottom: 10px;
     border-radius: 4px;
@@ -78,7 +88,7 @@ h4 {
 }
 
 #buttons div {
-    background-color: #9cd6bb;
+    background-color: #aae781;
     aspect-ratio: 1;
 }
 
@@ -101,20 +111,20 @@ h4 {
 
 #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine,
 #plus, #minus, #multiply, #divide, #equals, #point, #del, #clr {
-    background-color: #9cd6bb;
+    background-color: #aae781;
 }
 
 #zero:hover, #one:hover, #two:hover, #three:hover, #four:hover, #five:hover, 
 #six:hover, #seven:hover, #eight:hover, #nine:hover, #plus:hover, #minus:hover, 
 #multiply:hover, #divide:hover, #equals:hover, #point:hover, #del:hover, #clr:hover {
-    background-color: #83b39d;
+    background-color: #98cc75;
     cursor: pointer;
 }
 
 #zero:active, #one:active, #two:active, #three:active, #four:active, #five:active, 
 #six:active, #seven:active, #eight:active, #nine:active, #plus:active, #minus:active, 
 #multiply:active, #divide:active, #equals:active, #point:active, #del:active, #clr:active {
-    background-color: #739183;
+    background-color: #649962;
     cursor: pointer;
 }
 
@@ -125,5 +135,5 @@ h4 {
     justify-content: center;
     height: 30px;
     width: 100%;
-    background-color: #77c27d;
+    background-color: #d9e4da;
 }
