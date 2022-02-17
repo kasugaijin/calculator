@@ -7,3 +7,5 @@ User can enter numbers, back space, clear all, and run basic arithmetic function
 
 This is the final project for The Odin Project fundamentals.
 See index.html and style.css for media credits.  
+
+View live: https://kasugaijin.github.io/calculator/
