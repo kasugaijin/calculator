@@ -1,10 +1,5 @@
 const current = document.getElementById('current');
-
 const zero = document.getElementById('zero');
-const plus = document.getElementById('plus');
-const multiply = document.getElementById('multiply');
-const divide = document.getElementById('divide');
-const minus = document.getElementById('minus');
 const clr = document.getElementById('clr');
 const del = document.getElementById('del');
 const point = document.getElementById('point');
@@ -21,10 +16,18 @@ let object = {
 //this loops through 1-9 buttons in the DOM and adds an event listener to execute addNumber on click
 //event listener callback provides the text content of the div clicked. This is passed to addNumber()
 //this prevents having to add an event listener and function for each button 1-9. Saves ~170 lines of repetetive code
-let buttons = document.getElementsByClassName("button-number");
-        for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", (e) => {
+let numButtons = document.getElementsByClassName("button-number");
+        for (let i = 0; i < numButtons.length; i++) {
+        numButtons[i].addEventListener("click", (e) => {
             addNumber(e.target.textContent);
+        })
+    }
+
+//same applies to the four operators
+let operatorButtons = document.getElementsByClassName("button-operator");
+        for (let i = 0; i < operatorButtons.length; i++) {
+        operatorButtons[i].addEventListener("click", (e) => {
+            addOperator(e.target.textContent);
         })
     }
 
@@ -39,7 +42,7 @@ function addZero() {
     object["numOne"] = [0];
     current.textContent = object.numOne;
     } else if (!('operand' in object)) {
-        if(!(object.numOne[0] == 0)) {
+        if(!(object.numOne[0] == 0) && (object.numOne.length < 10)) {
         object["numOne"] += [0];
         current.textContent = object.numOne;
     }
@@ -48,7 +51,7 @@ function addZero() {
         object["numTwo"] = [0];
         current.textContent = object.numTwo;
     } else if ('numTwo' in object){
-        if(!(object.numOne[0] == 0)) { 
+        if(!(object.numTwo[0] == 0) && (object.numTwo.length < 10)) { 
         object["numTwo"] += [0];
         current.textContent = object.numTwo;
     }
@@ -77,116 +80,26 @@ function addNumber(e) {
     }
   }
   
-//**Operand, clear, equals, delete and decimal listeners and functions**
-
-//plus button listener and plus function
-//only inputs plus if there is a number to add to
-//automatically calculates if subsequent plus operations entered without pressing equals
-plus.addEventListener('click', addPlus);
-
-function addPlus() {
+//**Operator function**
+function addOperator(e) {
     if (('product' in object) && ('operand' in object) && ('numTwo' in object)) {
         operate(object.product, object.operand, object.numTwo);
-        current.textContent = object.product + "+";
-        object['operand'] = "+";
+        current.textContent = object.product + e;
+        object['operand'] = e;
     } else if (('numOne' in object) && ('operand' in object) && ('numTwo' in object)) {
         operate(object.numOne, object.operand, object.numTwo);
-        current.textContent = object.product + "+";
-        object['operand'] = "+";
+        current.textContent = object.product + e;
+        object['operand'] = e;
     }
     else if(!('numOne' in object) && !('product' in object)) {
         return false;
     } else {
     if('numOne' in object) {
-       object['operand'] = "+";
-       current.textContent = object.numOne + "+"; 
+       object['operand'] = e;
+       current.textContent = object.numOne + e; 
     } else {
-        current.textContent = object.product + "+";
-        object['operand'] = "+";
-    } 
-}
-}
-
-//minus button listener and minus function
-//only inputs minus if there is a number to subtract from
-//automatically calculates if subsequent minus operations entered without pressing equals
-minus.addEventListener('click', addMinus);
-
-function addMinus() {
-    if (('product' in object) && ('operand' in object) && ('numTwo' in object)) {
-        operate(object.product, object.operand, object.numTwo);
-        current.textContent = object.product + "-";
-        object['operand'] = "-";
-    } else if (('numOne' in object) && ('operand' in object) && ('numTwo' in object)) {
-        operate(object.numOne, object.operand, object.numTwo);
-        current.textContent = object.product + "-";
-        object['operand'] = "-";
-    }
-    else if(!('numOne' in object) && !('product' in object)) {
-        return false;
-    } else {
-    if('numOne' in object) {
-       object['operand'] = "-";
-       current.textContent = object.numOne + "-"; 
-    } else {
-        current.textContent = object.product + "-";
-        object['operand'] = "-";
-    } 
-}
-}
-
-//multiply button listener and multiply function
-//only inputs multiply if there is a number to subtract from
-//automatically calculates if subsequent multiply operations entered without pressing equals
-multiply.addEventListener('click', addMultiply);
-
-function addMultiply() {
-    if (('product' in object) && ('operand' in object) && ('numTwo' in object)) {
-        operate(object.product, object.operand, object.numTwo);
-        current.textContent = object.product + "*";
-        object['operand'] = "*";
-    } else if (('numOne' in object) && ('operand' in object) && ('numTwo' in object)) {
-        operate(object.numOne, object.operand, object.numTwo);
-        current.textContent = object.product + "*";
-        object['operand'] = "*";
-    }
-    else if(!('numOne' in object) && !('product' in object)) {
-        return false;
-    } else {
-    if('numOne' in object) {
-       object['operand'] = "*";
-       current.textContent = object.numOne + "*"; 
-    } else {
-        current.textContent = object.product + "*";
-        object['operand'] = "*";
-    } 
-}
-}
-
-//divide button listener and divide function
-//only inputs divide if there is a number to subtract from
-//automatically calculates if subsequent divide operations entered without pressing equals
-divide.addEventListener('click', addDivide);
-
-function addDivide() {
-    if (('product' in object) && ('operand' in object) && ('numTwo' in object)) {
-        operate(object.product, object.operand, object.numTwo);
-        current.textContent = object.product + "/";
-        object['operand'] = "/";
-    } else if (('numOne' in object) && ('operand' in object) && ('numTwo' in object)) {
-        operate(object.numOne, object.operand, object.numTwo);
-        current.textContent = object.product + "/";
-        object['operand'] = "/";
-    }
-    else if(!('numOne' in object) && !('product' in object)) {
-        return false;
-    } else {
-    if('numOne' in object) {
-       object['operand'] = "/";
-       current.textContent = object.numOne + "/"; 
-    } else {
-        current.textContent = object.product + "/";
-        object['operand'] = "/";
+        current.textContent = object.product + e;
+        object['operand'] = e;
     } 
 }
 }

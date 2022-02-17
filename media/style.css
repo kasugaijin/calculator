@@ -101,7 +101,7 @@ h4 {
     margin-top: 5px;
 }
 
-.button, .button-number {
+.button, .button-number, .button-operator {
     border-radius: 4px;
     display: flex;
     align-items: center;
