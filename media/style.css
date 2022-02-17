@@ -6,6 +6,7 @@ html, body {
     height: 100%;
 }
 
+/* background image from pexels.com */
 body {
     display: flex;
     flex-direction: column;
