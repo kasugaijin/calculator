@@ -100,7 +100,7 @@ h4 {
     margin-top: 5px;
 }
 
-.button {
+.button, .button-number {
     border-radius: 4px;
     display: flex;
     align-items: center;
